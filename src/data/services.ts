@@ -8,8 +8,8 @@ export const services = [
     text: "Responsive sites for products, NGOs, real estate, startups, and brands that need structure beyond a template.",
   },
   {
-    title: "Workflow & Automation",
-    text: "Lead capture, form automation, content workflows, internal tools, notifications, and operational handoffs.",
+    title: "AI Workflow & Automation",
+    text: "Lead capture, form automation, content workflows, internal tools, notifications, and AI-assisted operations.",
   },
   {
     title: "Backend & Database Setup",

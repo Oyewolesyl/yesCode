@@ -1,5 +1,4 @@
 import logo from "../assets/brand/yescode-main.svg";
-import { useState } from "react";
 
 type Props = {
   page: string;
@@ -8,35 +7,23 @@ type Props = {
 
 export function Navbar({ page, navigate }: Props) {
   const links = ["work", "services", "process", "about", "contact"];
-  const [open, setOpen] = useState(false);
-  const go = (next: string) => {
-    setOpen(false);
-    navigate(next);
-  };
 
   return (
-    <header className={`nav ${open ? "is-open" : ""}`}>
-      <div className="nav-bar">
-        <button className="brand" onClick={() => go("home")} aria-label="yesCode home">
-          <img src={logo} alt="yesCode" />
-        </button>
-        <button className="menu-toggle" onClick={() => setOpen((value) => !value)} aria-label="Toggle menu" aria-expanded={open}>
-          <span />
-          <span />
-          <span />
-        </button>
-      </div>
-      <nav className={open ? "open" : ""}>
+    <header className="nav">
+      <button className="brand" onClick={() => navigate("home")} aria-label="yesCode home">
+        <img src={logo} alt="yesCode" />
+      </button>
+      <nav>
         {links.map((link) => (
           <button
             key={link}
             className={page === link ? "active" : ""}
-            onClick={() => go(link)}
+            onClick={() => navigate(link)}
           >
             {link}
           </button>
         ))}
-        <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">
+        <a href="https://github.com/Oyewolesyl/yesCodeDesign" target="_blank" rel="noreferrer">
           yesCode Design
         </a>
       </nav>

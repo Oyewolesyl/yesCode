@@ -9,12 +9,11 @@ type Props = {
 
 export function MediaFrame({ src, alt = "", className = "", video = false }: Props) {
   const [ready, setReady] = useState(false);
-  const isVideo = video || /\.(mp4|webm|ogg)(\?|$)/i.test(src);
 
   return (
     <div className={`media-frame ${ready ? "is-ready" : ""} ${className}`}>
       <div className="media-blur" />
-      {isVideo ? (
+      {video ? (
         <video
           src={src}
           autoPlay

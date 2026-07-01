@@ -7,7 +7,7 @@ export function Footer({ navigate }: Props) {
     <footer className="footer">
       <div>
         <strong>yesCode</strong>
-        <p>Software, ecommerce, backend management, and launch-ready web products.</p>
+        <p>No-code avoids the build. We say yes code.</p>
       </div>
       <div className="footer-links">
         {["work", "services", "about", "contact"].map((item) => (
@@ -15,7 +15,7 @@ export function Footer({ navigate }: Props) {
             {item}
           </button>
         ))}
-        <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">
+        <a href="https://github.com/Oyewolesyl/yesCodeDesign" target="_blank" rel="noreferrer">
           yesCode Design
         </a>
       </div>
