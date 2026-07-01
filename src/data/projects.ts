@@ -11,12 +11,14 @@ export type Project = {
   liveUrl: string;
   summary: string;
   role: string;
+  logo: string;
   image: string;
   gallery: string[];
   outcome: string;
   skills: string[];
   tools: string[];
   sections: string[];
+  proofLinks?: { label: string; url: string }[];
 };
 
 export const projects: Project[] = [
@@ -28,6 +30,7 @@ export const projects: Project[] = [
     summary:
       "A premium real estate web experience for property trust, buyer confidence, inquiry flow, and high-value home presentation.",
     role: "Frontend implementation, responsive layout, conversion path, brand asset integration, Vercel deployment.",
+    logo: `${ahome}/brand/ahome-logo-gold-dark.svg`,
     image: `${ahome}/properties/estate-approach-05.png`,
     gallery: [
       `${ahome}/video/ahome-brand-film.mp4`,
@@ -47,6 +50,7 @@ export const projects: Project[] = [
     summary:
       "A consumer hardware brand site for sleep-focused audio, product education, visual research, fit studies, and launch storytelling.",
     role: "Product site build, product presentation, asset integration, responsive product sections, deployment.",
+    logo: `${ypod}/yema-case-dark.png`,
     image: `${ypod}/yema-case-dark.png`,
     gallery: [
       `${ypod}/videos/yema-1-floating-gradient.mp4`,
@@ -66,6 +70,7 @@ export const projects: Project[] = [
     summary:
       "A commerce layer for YPOD focused on product browsing, purchase intent, store structure, and mobile shopping.",
     role: "Shop interface, product card system, commerce page structure, responsive buying journey.",
+    logo: `${ypodStore}/nobg/yema-lite-in-case-nobg.png`,
     image: `${ypodStore}/nobg/yema-lite-in-case-nobg.png`,
     gallery: [
       `${ypodStore}/nobg/yema-lite-in-case-nobg.png`,
@@ -76,6 +81,9 @@ export const projects: Project[] = [
     skills: ["Ecommerce UX", "Product cards", "Shop navigation", "Mobile commerce", "Conversion flow"],
     tools: ["Next.js", "React", "TypeScript", "CSS", "Vercel", "GitHub"],
     sections: ["Shop grid", "Product detail logic", "Purchase path", "Store-ready structure"],
+    proofLinks: [
+      { label: "Shop walkthrough video", url: "https://x.com/daveayodeji_/status/2069845385393086882/video/1?s=46" },
+    ],
   },
   {
     slug: "ypod-backend-management",
@@ -85,6 +93,7 @@ export const projects: Project[] = [
     summary:
       "The operational management surface behind YPOD: a backend-facing admin experience for products, store control, and ecommerce readiness.",
     role: "Backend management interface, admin structure, product operations flow, deployment, and system-facing UX.",
+    logo: `${ypodStore}/remote/ypod-remote-showcase.png`,
     image: `${ypodStore}/remote/ypod-remote-showcase.png`,
     gallery: [
       `${ypod}/remote/ypod-remote-floating.mp4`,
@@ -95,6 +104,11 @@ export const projects: Project[] = [
     skills: ["Admin systems", "Backend-facing UX", "Product operations", "Ecommerce management", "Deployment"],
     tools: ["Next.js", "React", "TypeScript", "Vercel", "GitHub"],
     sections: ["Admin dashboard", "Product operations", "Store management", "Backend deployment"],
+    proofLinks: [
+      { label: "Backend management video", url: "https://x.com/daveayodeji_/status/2069818800896106503/video/1?s=46" },
+      { label: "Custom GLB workflow video", url: "https://x.com/daveayodeji_/status/2069091597401071790/video/1?s=46" },
+      { label: "Product motion proof", url: "https://x.com/daveayodeji_/status/2070400194269557022/video/1?s=46" },
+    ],
   },
   {
     slug: "dealradar-ng",
@@ -104,6 +118,7 @@ export const projects: Project[] = [
     summary:
       "A digital marketing and ecommerce platform for deal discovery, local business visibility, branded campaigns, and conversion.",
     role: "Frontend system, brand asset integration, deal discovery interface, category and conversion structure.",
+    logo: `${dealradar}/brand/main-logo-white.svg`,
     image: `${dealradar}/brand/main-logo-white.svg`,
     gallery: [
       `${dealradar}/products/amap.jpg`,
@@ -123,6 +138,7 @@ export const projects: Project[] = [
     summary:
       "A sustainability product site for banana fibre paper packaging, environmental impact, process storytelling, and market credibility.",
     role: "Frontend implementation, media-led sections, responsive storytelling, product and process proof.",
+    logo: `${naturepacks}/brand/naturepacks-main.svg`,
     image: `${naturepacks}/howitworksbanner.png`,
     gallery: [
       `${naturepacks}/newnaturepacks/process/sheet-forming-new.mp4`,

@@ -5,6 +5,7 @@ import { ProjectCard } from "./components/ProjectCard";
 import { MediaFrame } from "./components/MediaFrame";
 import { projects } from "./data/projects";
 import { services } from "./data/services";
+import yescodeIntro from "./assets/media/yescode-intro.mp4";
 import ecosystemVideo from "./assets/media/yescode-ecosystem.mp4";
 import typingVideo from "./assets/media/typing-code.mp4";
 
@@ -55,11 +56,11 @@ function Home({ navigate }: { navigate: (page: string) => void }) {
     <main>
       <section className="hero">
         <div className="hero-copy">
-          <span className="eyebrow">AI-assisted. Human-directed. Code-backed.</span>
-          <h1>No-code avoids the build. We say yes code.</h1>
+          <span className="eyebrow">software / ecommerce / backend / launch</span>
+          <h1>Web products, stores, admin systems, and launch-ready builds.</h1>
           <p>
-            yesCode builds web products, AI-assisted systems, automations, backend logic, and launch-ready digital
-            tools for people who need more than a template.
+            yesCode builds the working layer behind real projects: public sites, stores, backend management surfaces,
+            product interfaces, automation flows, and deployed software.
           </p>
           <div className="actions">
             <button onClick={() => navigate("work")}>view work</button>
@@ -69,12 +70,14 @@ function Home({ navigate }: { navigate: (page: string) => void }) {
           </div>
         </div>
         <div className="hero-media">
-          <MediaFrame src={ecosystemVideo} video />
+          <MediaFrame src={yescodeIntro} video />
         </div>
       </section>
 
+      <ProjectIndex navigate={navigate} />
+
       <section className="strip">
-        {["web apps", "landing pages", "automation", "AI workflows", "backend systems", "product MVPs"].map((item) => (
+        {["web apps", "ecommerce", "backend systems", "admin dashboards", "landing pages", "product MVPs"].map((item) => (
           <span key={item}>{item}</span>
         ))}
       </section>
@@ -92,7 +95,7 @@ function Home({ navigate }: { navigate: (page: string) => void }) {
       </section>
 
       <Services compact />
-      <AIStance />
+      <BuildStance />
       <Process />
       <SisterBrand />
     </main>
@@ -102,7 +105,7 @@ function Home({ navigate }: { navigate: (page: string) => void }) {
 function Work({ navigate }: { navigate: (page: string) => void }) {
   return (
     <main className="page">
-      <PageHeader eyebrow="work" title="Five projects, built as evidence." text="Each card is structured so live links, GitHub URLs, screenshots, and deeper notes can be swapped in as each deployment is finalized." />
+      <PageHeader eyebrow="work" title="Six live projects, built as evidence." text="Each project opens to a case view and links directly to the deployed surface." />
       <div className="projects-grid">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} onOpen={(slug) => navigate(`project:${slug}`)} />
@@ -148,6 +151,15 @@ function ProjectDetail({ slug, navigate }: { slug: string; navigate: (page: stri
           <MediaFrame key={image} src={image} />
         ))}
       </section>
+      {project.proofLinks?.length ? (
+        <section className="proof-links">
+          {project.proofLinks.map((link) => (
+            <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </section>
+      ) : null}
       <section className="case-grid">
         <div>
           <h2>Build Scope</h2>
@@ -213,16 +225,31 @@ function Services({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function AIStance() {
+function ProjectIndex({ navigate }: { navigate: (page: string) => void }) {
+  return (
+    <section className="project-index" aria-label="Live projects">
+      {projects.map((project) => (
+        <article key={project.slug}>
+          <button onClick={() => navigate(`project:${project.slug}`)} aria-label={`${project.title} case`}>
+            <img src={project.logo} alt={project.title} />
+          </button>
+          <a href={project.liveUrl} target="_blank" rel="noreferrer">live</a>
+        </article>
+      ))}
+    </section>
+  );
+}
+
+function BuildStance() {
   return (
     <section className="ai-section">
       <MediaFrame src={typingVideo} video />
       <div>
-        <span className="eyebrow">AI stance</span>
-        <h2>We use AI openly.</h2>
+        <span className="eyebrow">engineering stance</span>
+        <h2>Typed, tested, deployed.</h2>
         <p>
-          AI helps us move faster, generate options, document flows, create scaffolds, and automate repetitive work. It
-          does not replace taste, structure, security, product judgment, or final implementation.
+          Code is used where the product needs logic, control, performance, integrations, backend management, and
+          a deployment path that does not collapse after the first change request.
         </p>
       </div>
     </section>
@@ -242,7 +269,7 @@ function Process() {
 function About() {
   return (
     <main className="page narrow">
-      <PageHeader eyebrow="about" title="Software and AI-assisted product builds." text="yesCode is a founder-led software studio for people who need working systems, not just nice pages." />
+      <PageHeader eyebrow="about" title="Software and product builds." text="yesCode is a founder-led software studio for people who need working systems, not just nice pages." />
       <p>
         The name is a response to the no-code wave. We respect speed, automation, and modern tools, but not every
         problem should be trapped inside a drag-and-drop template.
@@ -256,7 +283,10 @@ function Contact() {
   return (
     <main className="page contact" id="contact">
       <PageHeader eyebrow="contact" title="Start with the build." text="Tell us what you want to launch, automate, fix, or turn into a working product." />
-      <a className="mail-link" href="mailto:hello@yescode.dev">hello@yescode.dev</a>
+      <div className="contact-actions">
+        <a className="mail-link" href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp 08104190898</a>
+        <a className="mail-link secondary-link" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">X / Twitter</a>
+      </div>
       <div className="contact-grid">
         {["Name", "Email", "Business / Project", "What do you need?", "Budget range", "Timeline", "Links"].map((item) => (
           <span key={item}>{item}</span>
@@ -272,7 +302,8 @@ function SisterBrand() {
       <span className="eyebrow">ecosystem</span>
       <h2>Need the design layer? Visit yesCode Design.</h2>
       <p>yesCode builds the engineering layer. yesCode Design shapes products before they are built.</p>
-      <a href="https://github.com/Oyewolesyl/yesCodeDesign" target="_blank" rel="noreferrer">open yesCode Design</a>
+      <MediaFrame src={ecosystemVideo} video />
+      <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">open yesCode Design</a>
     </section>
   );
 }
