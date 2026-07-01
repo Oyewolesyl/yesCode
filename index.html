@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yesCode | Web products, backend systems, Supabase and automation</title>
+    <meta
+      name="description"
+      content="yesCode builds frontends, backend systems, Supabase databases, admin dashboards, automations, and deployed product systems."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="load-veil" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="yesCode home">
+        <img src="./assets/brand/yescode-main.svg" alt="yesCode" />
+      </a>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#backend">Backend</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">yesCode Design</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Frontend. Backend. Database. Deployment.</p>
+          <h1>Product builds that do not stop at the interface.</h1>
+          <p>
+            yesCode builds web products, Supabase-backed systems, backend logic, automations, admin dashboards, and launch-ready deployed experiences.
+          </p>
+          <div class="actions">
+            <a class="primary" href="#work">View work</a>
+            <a class="secondary" href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">Start a build</a>
+          </div>
+        </div>
+        <div class="hero-film media-shell">
+          <video src="./assets/media/yescode-intro.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </section>
+
+      <section class="proof-row" aria-label="Brand proof videos">
+        <article class="proof-tile media-shell">
+          <video src="./assets/media/typing-code.mp4" autoplay muted loop playsinline></video>
+          <span>Code execution</span>
+        </article>
+        <article class="proof-tile media-shell">
+          <video src="./assets/media/yescode-ecosystem.mp4" autoplay muted loop playsinline></video>
+          <span>yesCode ecosystem</span>
+        </article>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Selected builds</p>
+          <h2>Proof-led projects, not empty claims.</h2>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <section id="backend" class="backend-panel">
+        <div>
+          <p class="eyebrow">Backend and database</p>
+          <h2>Supabase, APIs, admin logic, and product operations are part of the work.</h2>
+          <p>
+            The build stack includes database schema planning, auth, storage, row-level security thinking, admin dashboard flows, API logic, and deployed backend surfaces.
+          </p>
+        </div>
+        <div class="backend-grid">
+          <span>Supabase</span>
+          <span>PostgreSQL</span>
+          <span>Authentication</span>
+          <span>Storage</span>
+          <span>Row Level Security</span>
+          <span>Backend APIs</span>
+          <span>Admin Dashboards</span>
+          <span>Vercel Deployment</span>
+        </div>
+      </section>
+
+      <section id="stack" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Stack</p>
+          <h2>Tools are shown where they actually matter.</h2>
+        </div>
+        <div class="tool-grid" id="toolGrid"></div>
+      </section>
+
+      <section id="process" class="process">
+        <p class="eyebrow">Build process</p>
+        <div class="process-grid">
+          <article><strong>01</strong><h3>Map the product</h3><p>Clarify users, features, data, workflows, and what the build must prove.</p></article>
+          <article><strong>02</strong><h3>Build the system</h3><p>Frontend, backend, database, auth, admin surfaces, and integrations move together.</p></article>
+          <article><strong>03</strong><h3>Ship and harden</h3><p>Deploy, test responsive behavior, fix loading states, and make the product usable.</p></article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <img src="./assets/brand/yescode-main.svg" alt="yesCode" />
+        <div>
+          <h2>Build the product properly.</h2>
+          <p>WhatsApp: <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">08104190898</a></p>
+          <p>X: <a href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">@yescodedesign</a></p>
+        </div>
+      </section>
+    </main>
+
+    <div class="scroll-tools">
+      <button type="button" data-scroll="top" aria-label="Scroll to top">↑</button>
+      <button type="button" data-scroll="bottom" aria-label="Scroll to bottom">↓</button>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
