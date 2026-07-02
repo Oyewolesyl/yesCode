@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>yesCode | Web products, backend systems, Supabase and automation</title>
+    <title>yesCode | Product builds and backend systems</title>
     <meta
       name="description"
-      content="yesCode builds frontends, backend systems, Supabase databases, admin dashboards, automations, and deployed product systems."
+      content="yesCode builds deployed frontends, backend systems, Supabase databases, admin dashboards, stores, and product workflows."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -21,89 +21,78 @@
       </button>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#systems">Systems</a>
         <a href="#stack">Stack</a>
-        <a href="#backend">Backend</a>
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
-        <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">yesCode Design</a>
+        <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">Design arm</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Frontend / backend / database / deployment</p>
-          <h1>Builds that ship the whole system.</h1>
+          <p class="kicker">Frontend / backend / database / deployment</p>
+          <h1>Working products, not presentation decks.</h1>
           <p>
-            Deployed web products, stores, admin surfaces, Supabase data layers, and backend workflows for real businesses.
+            yesCode builds the shipped layer: public sites, stores, admin surfaces, Supabase data models, backend workflows, and deployment-ready product logic.
           </p>
           <div class="actions">
-            <a class="primary" href="#work">View work</a>
-            <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">Start a build</a>
+            <a class="primary" href="#work">View live work</a>
+            <a class="secondary" href="#systems">See the system</a>
           </div>
         </div>
-        <div class="hero-film media-shell">
+        <div class="proof-panel">
           <video src="./assets/media/yescode-intro.mp4" autoplay muted loop playsinline></video>
         </div>
       </section>
 
-      <section id="work" class="section">
+      <section id="work" class="work-section">
         <div class="section-head">
-          <p class="eyebrow">Live work</p>
-          <h2>Every project opens to a deployed product.</h2>
+          <p class="kicker">Live work</p>
+          <h2>Each build opens to the real deployed product.</h2>
         </div>
-        <div class="project-grid" id="projectGrid"></div>
+        <div class="product-ledger" id="projectGrid"></div>
       </section>
 
-      <section id="stack" class="stack-panel">
-        <div class="stack-copy">
-          <p class="eyebrow">Stack</p>
-          <h2>The stack is part of the product, not decoration.</h2>
-        </div>
-        <div class="tool-grid" id="toolGrid"></div>
-      </section>
-
-      <section id="backend" class="backend-panel">
+      <section id="systems" class="systems-section">
         <div>
-          <p class="eyebrow">Backend</p>
-          <h2>Data, auth, admin control, and deployment are designed into the build.</h2>
-          <p>
-            Schema planning, auth, storage, row-level security, dashboard flows, API logic, and deployment are treated as product decisions.
-          </p>
+          <p class="kicker">Backend</p>
+          <h2>Supabase, APIs, admin logic, and product operations sit inside the work.</h2>
         </div>
-        <div class="backend-grid">
-          <span>Supabase</span>
-          <span>PostgreSQL</span>
-          <span>Authentication</span>
-          <span>Storage</span>
-          <span>Row Level Security</span>
-          <span>Backend APIs</span>
-          <span>Admin Dashboards</span>
-          <span>Vercel Deployment</span>
+        <div class="system-board" id="systemBoard"></div>
+      </section>
+
+      <section id="stack" class="stack-section">
+        <div class="section-head">
+          <p class="kicker">Stack</p>
+          <h2>Tools shown as tools, not decoration.</h2>
+        </div>
+        <div class="tool-strip" id="toolGrid"></div>
+      </section>
+
+      <section id="process" class="process-section">
+        <p class="kicker">Process</p>
+        <div class="process-list">
+          <article><strong>01</strong><h3>Define the working surface</h3><p>Users, data, flows, admin controls, edge cases, and what the build must prove.</p></article>
+          <article><strong>02</strong><h3>Build across layers</h3><p>Frontend, backend, database, auth, storage, and deployment move as one product system.</p></article>
+          <article><strong>03</strong><h3>Ship with evidence</h3><p>Live URLs, responsive checks, loading behavior, and real project assets replace vague claims.</p></article>
         </div>
       </section>
 
-      <section id="process" class="process">
-        <p class="eyebrow">Process</p>
-        <div class="process-grid">
-          <article><strong>01</strong><h3>Map the product</h3><p>Clarify users, features, data, workflows, and what the build must prove.</p></article>
-          <article><strong>02</strong><h3>Build the system</h3><p>Frontend, backend, database, auth, admin surfaces, and integrations move together.</p></article>
-          <article><strong>03</strong><h3>Ship and harden</h3><p>Deploy, test responsive behavior, fix loading states, and make the product usable.</p></article>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
+      <section id="contact" class="contact-section">
         <img src="./assets/brand/yescode-main.svg" alt="yesCode" />
         <div>
-          <h2>Build with proof, not guesswork.</h2>
-          <p>X: <a href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">@yescodedesign</a></p>
+          <p class="kicker">Contact</p>
+          <h2>Start from the product that needs to exist.</h2>
+          <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">Open X</a>
         </div>
       </section>
     </main>
 
     <div class="scroll-tools">
-      <button type="button" data-scroll="top" aria-label="Scroll to top">↑</button>
-      <button type="button" data-scroll="bottom" aria-label="Scroll to bottom">↓</button>
+      <button type="button" data-scroll="top" aria-label="Scroll to top">Top</button>
+      <button type="button" data-scroll="bottom" aria-label="Scroll to bottom">End</button>
     </div>
     <script src="./app.js"></script>
   </body>
