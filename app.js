@@ -72,25 +72,24 @@ const projects = [
 ];
 
 document.querySelector("#projectGrid").innerHTML = projects.map((project) => `
-  <article class="project-row">
+  <article class="project-line">
     <a class="project-mark" href="${project.live}" target="_blank" rel="noreferrer">
       <img src="${project.logo}" alt="${project.title}" loading="lazy">
     </a>
-    <div>
+    <div class="project-copy">
       <span class="meta">${project.meta}</span>
       <h3>${project.title}</h3>
       <p>${project.body}</p>
-      <div class="system-tags">${project.system.map((item) => `<span>${item}</span>`).join("")}</div>
+      <p class="system-text">${project.system.join(" / ")}</p>
     </div>
     <div class="project-actions">
-      <a href="${project.live}" target="_blank" rel="noreferrer">Open live site</a>
-      <a href="${project.live}" target="_blank" rel="noreferrer">Inspect system</a>
+      <a href="${project.live}" target="_blank" rel="noreferrer">Live site</a>
     </div>
   </article>
 `).join("");
 
 document.querySelector("#toolGrid").innerHTML = tools.map(([name, icon]) => `
-  <div class="tool-card"><img src="${icon}" alt="" loading="lazy"><strong>${name}</strong></div>
+  <span class="tool-mark"><img src="${icon}" alt="" loading="lazy"><strong>${name}</strong></span>
 `).join("");
 
 document.querySelector(".backend-grid").innerHTML = capabilities.map((item) => `<span>${item}</span>`).join("");
