@@ -1,75 +1,82 @@
 const tools = [
-  ["Supabase", "https://cdn.simpleicons.org/supabase/3FCF8E"],
-  ["PostgreSQL", "https://cdn.simpleicons.org/postgresql/4169E1"],
-  ["React", "https://cdn.simpleicons.org/react/61DAFB"],
-  ["Next.js", "https://cdn.simpleicons.org/nextdotjs/ffffff"],
-  ["Vite", "https://cdn.simpleicons.org/vite/646CFF"],
-  ["TypeScript", "https://cdn.simpleicons.org/typescript/3178C6"],
-  ["Vercel", "https://cdn.simpleicons.org/vercel/ffffff"],
-  ["GitHub", "https://cdn.simpleicons.org/github/ffffff"],
+  ["supabase", "https://cdn.simpleicons.org/supabase/3FCF8E"],
+  ["postgresql", "https://cdn.simpleicons.org/postgresql/4169E1"],
+  ["react", "https://cdn.simpleicons.org/react/61DAFB"],
+  ["next js", "https://cdn.simpleicons.org/nextdotjs/ffffff"],
+  ["vite", "https://cdn.simpleicons.org/vite/646CFF"],
+  ["type script", "https://cdn.simpleicons.org/typescript/3178C6"],
+  ["vercel", "https://cdn.simpleicons.org/vercel/ffffff"],
+  ["github", "https://cdn.simpleicons.org/github/ffffff"],
+  ["notion", "https://cdn.simpleicons.org/notion/ffffff"],
 ];
 
 const systems = [
-  ["Data model", "Supabase tables, relationships, storage paths, auth state, and product rules."],
-  ["Backend logic", "APIs, admin actions, ecommerce control, product operations, and automation paths."],
-  ["Frontend behavior", "Responsive screens, loading blur, live links, motion, and interface states."],
-  ["Deployment", "Vercel builds, GitHub delivery, route structure, and production checks."],
+  ["data model", "supabase tables, relationships, storage paths, auth state, and product rules"],
+  ["backend logic", "api routes, admin actions, commerce control, product operations, and automation paths"],
+  ["frontend behavior", "responsive screens, loading blur, live links, motion, and interface states"],
+  ["deployment", "vercel builds, github delivery, route structure, and production checks"],
 ];
 
 const projects = [
   {
-    title: "A Home Realty",
-    meta: "Real estate web product",
+    title: "a home realty",
+    meta: "real estate web product",
     live: "https://ahomerealty.vercel.app",
     logo: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg",
-    surface: "Public property experience",
-    build: "React / Vite / lead journey / deployment",
-    body: "Luxury real estate interface with property hierarchy, buyer trust, inquiry flow, and conversion-ready presentation.",
+    media: "https://ahomerealty.vercel.app/assets/properties/estate-approach-05.png",
+    surface: "public property experience",
+    build: "react, vite, lead flow, deployment",
+    body: "luxury property hierarchy, buyer trust, inquiry flow, and conversion ready presentation",
   },
   {
-    title: "YPOD",
-    meta: "Hardware brand site",
+    title: "ypod",
+    meta: "consumer electronics brand site",
     live: "https://ypod.vercel.app",
     logo: "./assets/projects/ypod/yema-dark.png",
-    surface: "Consumer electronics brand site",
-    build: "Product UI / media proof / responsive frontend",
-    body: "Product storytelling, research visuals, fit study proof, launch structure, and brand-site execution.",
+    media: "./assets/projects/ypod/ypro-fit.png",
+    surface: "hardware brand surface",
+    build: "product ui, media proof, responsive frontend",
+    body: "product storytelling, research visuals, fit study proof, launch structure, and brand site execution",
   },
   {
-    title: "YPOD Store",
-    meta: "Ecommerce",
+    title: "ypod store",
+    meta: "ecommerce",
     live: "https://ypod-store.vercel.app/shop",
     logo: "./assets/projects/ypod/yema-case.png",
-    surface: "Shop and product browsing",
-    build: "Next.js / product cards / mobile commerce",
-    body: "A store surface for browsing, purchase confidence, product-card decisions, and a direct buying path.",
+    media: "./assets/projects/ypod/yema-case.png",
+    surface: "shop and product browsing",
+    build: "next js, product cards, mobile commerce",
+    body: "browsing, purchase confidence, product card decisions, and a direct buying path",
   },
   {
-    title: "YPOD Backend Management",
-    meta: "Backend operations",
+    title: "ypod backend management",
+    meta: "backend operations",
     live: "https://ypod-backend-management.vercel.app/",
     logo: "./assets/projects/ypod/ypod-reasoning.png",
-    surface: "Admin-facing product control",
-    build: "Supabase / auth / dashboard logic / deployment",
-    body: "Management surface for backend product operations, store logic, admin flows, and operational control.",
+    media: "./assets/projects/ypod/ypod-reasoning.png",
+    surface: "admin facing product control",
+    build: "supabase, auth, dashboard logic, deployment",
+    body: "product operations, store logic, admin flows, database structure, and operational control",
   },
   {
-    title: "DealRadar NG",
-    meta: "Digital marketing commerce",
+    title: "dealradar ng",
+    meta: "digital marketing ecommerce",
     live: "https://www.dealradarng.com",
     logo: "./assets/projects/dealradar/main-logo-light.svg",
-    surface: "Deal discovery platform",
-    build: "Next.js / marketplace UX / campaign routing",
-    body: "Merchant visibility, offer discovery, campaign structure, and ecommerce action for local businesses.",
+    media: "./assets/projects/dealradar/banner-dark.png",
+    surface: "deal discovery platform",
+    build: "next js, marketplace ux, campaign routing",
+    body: "merchant visibility, offer discovery, campaign structure, and ecommerce action for local businesses",
   },
   {
-    title: "NaturePacks",
-    meta: "Sustainability impact",
+    title: "naturepacks",
+    meta: "sustainability impact",
     live: "https://www.naturepacks.org",
     logo: "./assets/projects/naturepacks/naturepacks-main.svg",
-    surface: "Impact and product proof site",
-    build: "HTML / CSS / brand proof / deployment",
-    body: "Sustainable packaging experience with material clarity, product story, process proof, and environmental impact.",
+    media: "./assets/projects/naturepacks/merch-01.jpeg",
+    surface: "impact and product proof site",
+    build: "html, css, brand proof, deployment",
+    body: "material clarity, product story, process proof, and environmental impact",
   },
 ];
 
@@ -78,21 +85,22 @@ function img(src, alt) {
 }
 
 document.querySelector("#projectGrid").innerHTML = projects.map((project, index) => `
-  <article class="product-row">
-    <a class="project-logo" href="${project.live}" target="_blank" rel="noreferrer">
-      <span>${String(index + 1).padStart(2, "0")}</span>
-      ${img(project.logo, project.title)}
+  <article class="product-piece">
+    <div class="piece-number">${String(index + 1).padStart(2, "0")}</div>
+    <a class="piece-media" href="${project.live}" target="_blank" rel="noreferrer">
+      ${img(project.media, project.title)}
     </a>
-    <div class="project-main">
+    <div class="piece-copy">
       <p class="kicker">${project.meta}</p>
       <h3>${project.title}</h3>
       <p>${project.body}</p>
+      <div class="piece-notes">
+        <span>${project.surface}</span>
+        <span>${project.build}</span>
+      </div>
+      <a class="open-link" href="${project.live}" target="_blank" rel="noreferrer">open live site</a>
     </div>
-    <div class="project-facts">
-      <span>${project.surface}</span>
-      <span>${project.build}</span>
-    </div>
-    <a class="open-link" href="${project.live}" target="_blank" rel="noreferrer">Open live site</a>
+    <a class="piece-mark" href="${project.live}" target="_blank" rel="noreferrer">${img(project.logo, project.title)}</a>
   </article>
 `).join("");
 
@@ -122,7 +130,7 @@ document.querySelectorAll("a[href^='#']").forEach((link) => {
 });
 
 document.querySelectorAll("img, video").forEach((item) => {
-  const done = () => item.closest(".proof-panel")?.classList.add("ready");
+  const done = () => item.closest(".hero-media, .piece-media")?.classList.add("ready");
   item.addEventListener("load", done);
   item.addEventListener("loadeddata", done);
   if (item.complete || item.readyState >= 2) done();
