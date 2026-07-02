@@ -1,16 +1,23 @@
 const tools = [
-  ["Supabase", "SB"],
-  ["PostgreSQL", "PG"],
-  ["Backend APIs", "API"],
-  ["Authentication", "AU"],
-  ["Storage", "ST"],
-  ["Admin dashboards", "AD"],
-  ["React", "R"],
-  ["Next.js", "N"],
-  ["Vite", "V"],
-  ["TypeScript", "TS"],
-  ["Vercel", "▲"],
-  ["GitHub", "GH"],
+  ["Supabase", "https://cdn.simpleicons.org/supabase/3FCF8E"],
+  ["PostgreSQL", "https://cdn.simpleicons.org/postgresql/4169E1"],
+  ["React", "https://cdn.simpleicons.org/react/61DAFB"],
+  ["Next.js", "https://cdn.simpleicons.org/nextdotjs/ffffff"],
+  ["Vite", "https://cdn.simpleicons.org/vite/646CFF"],
+  ["TypeScript", "https://cdn.simpleicons.org/typescript/3178C6"],
+  ["Vercel", "https://cdn.simpleicons.org/vercel/ffffff"],
+  ["GitHub", "https://cdn.simpleicons.org/github/ffffff"],
+];
+
+const capabilities = [
+  "Backend APIs",
+  "Authentication",
+  "Storage",
+  "Row Level Security",
+  "Admin dashboards",
+  "Database schema",
+  "Automation flows",
+  "Deployment handoff",
 ];
 
 const projects = [
@@ -19,7 +26,7 @@ const projects = [
     meta: "Real estate web product",
     live: "https://ahomerealty.vercel.app",
     logo: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg",
-    media: "https://ahomerealty.vercel.app/assets/properties/estate-approach-05.png",
+    system: ["Frontend", "Lead flow", "Property UX", "Deployment"],
     body: "Luxury real estate interface, property hierarchy, inquiry flow, visual trust, and conversion-ready presentation.",
   },
   {
@@ -27,7 +34,7 @@ const projects = [
     meta: "Hardware brand site",
     live: "https://ypod.vercel.app",
     logo: "https://ypod.vercel.app/assets/yema-case-dark.png",
-    media: "https://ypod.vercel.app/assets/videos/yema-pro-floating-dark.mp4",
+    system: ["Brand site", "Product UI", "Launch surface", "Deployment"],
     body: "Consumer electronics product site with product storytelling, research visuals, fit study proof, and launch structure.",
   },
   {
@@ -35,7 +42,7 @@ const projects = [
     meta: "Ecommerce",
     live: "https://ypod-store.vercel.app/shop",
     logo: "https://ypod-store.vercel.app/assets/nobg/yema-lite-in-case-nobg.png",
-    media: "https://ypod-store.vercel.app/assets/nobg/yema-lite-in-case-nobg.png",
+    system: ["Shop", "Product grid", "Cart path", "Mobile commerce"],
     body: "Shop surface for product browsing, purchase confidence, mobile commerce, and product-card decision flow.",
   },
   {
@@ -43,7 +50,7 @@ const projects = [
     meta: "Backend operations",
     live: "https://ypod-backend-management.vercel.app/",
     logo: "https://ypod-store.vercel.app/assets/remote/ypod-remote-showcase.png",
-    media: "https://ypod.vercel.app/assets/remote/ypod-remote-floating.mp4",
+    system: ["Backend", "Admin UI", "Operations", "Product control"],
     body: "Admin-facing management surface for backend product operations, store logic, dashboard structure, and control flows.",
   },
   {
@@ -51,7 +58,7 @@ const projects = [
     meta: "Digital marketing commerce",
     live: "https://www.dealradarng.com",
     logo: "https://www.dealradarng.com/brand/main-logo-white.svg",
-    media: "https://www.dealradarng.com/products/amap.jpg",
+    system: ["Marketplace", "Campaigns", "Commerce", "Discovery"],
     body: "Deal discovery and merchant visibility platform shaped around offers, campaign structure, and ecommerce action.",
   },
   {
@@ -59,37 +66,34 @@ const projects = [
     meta: "Sustainability impact",
     live: "https://www.naturepacks.org",
     logo: "https://www.naturepacks.org/assets/brand/naturepacks-main.svg",
-    media: "https://www.naturepacks.org/assets/newnaturepacks/process/sheet-forming-new.mp4",
+    system: ["Impact site", "Process proof", "Brand story", "Product proof"],
     body: "Sustainable packaging web experience with process proof, product story, material clarity, and environmental impact.",
   },
 ];
 
-function mediaTag(src, alt) {
-  if (src.endsWith(".mp4")) {
-    return `<video src="${src}" autoplay muted loop playsinline></video>`;
-  }
-  return `<img src="${src}" alt="${alt}" loading="lazy" />`;
-}
-
 document.querySelector("#projectGrid").innerHTML = projects.map((project) => `
-  <article class="project-card">
-    <div class="logo-box"><img src="${project.logo}" alt="${project.title}" loading="lazy"></div>
-    <div class="media-shell">${mediaTag(project.media, project.title)}</div>
+  <article class="project-row">
+    <a class="project-mark" href="${project.live}" target="_blank" rel="noreferrer">
+      <img src="${project.logo}" alt="${project.title}" loading="lazy">
+    </a>
     <div>
       <span class="meta">${project.meta}</span>
       <h3>${project.title}</h3>
       <p>${project.body}</p>
+      <div class="system-tags">${project.system.map((item) => `<span>${item}</span>`).join("")}</div>
     </div>
     <div class="project-actions">
       <a href="${project.live}" target="_blank" rel="noreferrer">Open live site</a>
-      <a href="${project.live}" target="_blank" rel="noreferrer">Inspect build</a>
+      <a href="${project.live}" target="_blank" rel="noreferrer">Inspect system</a>
     </div>
   </article>
 `).join("");
 
-document.querySelector("#toolGrid").innerHTML = tools.map(([name, mark]) => `
-  <div class="tool-card"><span class="tool-icon">${mark}</span><strong>${name}</strong></div>
+document.querySelector("#toolGrid").innerHTML = tools.map(([name, icon]) => `
+  <div class="tool-card"><img src="${icon}" alt="" loading="lazy"><strong>${name}</strong></div>
 `).join("");
+
+document.querySelector(".backend-grid").innerHTML = capabilities.map((item) => `<span>${item}</span>`).join("");
 
 document.querySelector(".menu-button").addEventListener("click", () => {
   const header = document.querySelector(".site-header");
