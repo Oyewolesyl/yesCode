@@ -6,7 +6,7 @@
     <title>yescode | product systems that ship</title>
     <meta
       name="description"
-      content="yescode builds deployed frontends, backend systems, supabase databases, admin dashboards, stores, and product workflows"
+      content="yescode builds deployed frontends, backend systems, supabase databases, admin dashboards, stores, payment flows, and product workflows"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -32,14 +32,14 @@
     <main id="top">
       <section class="hero">
         <div class="hero-copy">
-          <p class="kicker">frontend backend database deployment</p>
-          <h1>builds that move from idea to working product</h1>
+          <p class="kicker">frontend, backend, database, deployment</p>
+          <h1>build the product people are waiting to use</h1>
           <p>
-            yescode turns brand sites, shops, dashboards, data layers, and operations into deployed surfaces people can actually use
+            yescode helps founders and teams turn a clear product direction into the public site, web app, backend, payment flow, dashboard, and launch system around it
           </p>
           <div class="actions">
             <a class="primary" href="#work">view work</a>
-            <a class="secondary" href="#backend">see backend depth</a>
+            <a class="secondary" href="#contact">start a product</a>
           </div>
         </div>
         <div class="hero-media">
@@ -50,8 +50,8 @@
       <section id="work" class="work-section">
         <div class="section-head">
           <p class="kicker">live work</p>
-          <h2>each product opens to the deployed surface</h2>
-          <p>the work is shown by what exists live, what layer was built, and the real product or brand asset behind it</p>
+          <h2>work that reaches launch</h2>
+          <p>each project shows the live surface, the build layer, and how design direction becomes something a founder can put in front of people</p>
         </div>
         <div class="product-board" id="projectGrid"></div>
       </section>
@@ -59,7 +59,7 @@
       <section id="backend" class="backend-section">
         <div>
           <p class="kicker">backend</p>
-          <h2>supabase, admin logic, api paths, and storage belong in the product story</h2>
+          <h2>the backend is part of the launch</h2>
         </div>
         <div class="backend-board" id="systemBoard"></div>
       </section>
@@ -67,8 +67,8 @@
       <section id="stack" class="stack-section">
         <div class="section-head">
           <p class="kicker">stack</p>
-          <h2>tools are shown with their real marks</h2>
-          <p>notion planning, figma handoff, supabase data, react interfaces, and deployment tools sit beside the kind of work they support</p>
+          <h2>tools are only useful when they move the product forward</h2>
+          <p>notion planning, figma handoff, supabase data, react interfaces, model research, and deployment tools are used to shorten the road from idea to shipped product</p>
         </div>
         <div class="tool-strip" id="toolGrid"></div>
       </section>
@@ -78,7 +78,7 @@
         <div class="process-list">
           <article><strong>01</strong><h3>shape the working surface</h3><p>users, routes, data, admin control, mobile behavior, and what the product must prove</p></article>
           <article><strong>02</strong><h3>build across layers</h3><p>interface, backend, database, auth, storage, and deployment are treated as one product system</p></article>
-          <article><strong>03</strong><h3>ship with proof</h3><p>live urls, responsive checks, loading blur, real assets, and production review replace vague claims</p></article>
+          <article><strong>03</strong><h3>ship with proof</h3><p>live urls, responsive checks, dark loading states, real assets, and production review replace vague claims</p></article>
         </div>
       </section>
 
@@ -86,11 +86,38 @@
         <img src="./assets/brand/yescode-main.svg" alt="yescode" />
         <div>
           <p class="kicker">contact</p>
-          <h2>bring the product that needs to work</h2>
+          <h2>start with the product you need to launch</h2>
+          <p>send a short overview. the goal is to understand the product, the stage, and the service that gets it moving.</p>
+          <p class="founders">cofounders: <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a> and <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a></p>
+          <form class="intake-form" action="https://formsubmit.co/oyewolesyl@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="new yescode project overview" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_cc" value="daveolaniyan@gmail.com" />
+            <label>name<input name="name" type="text" autocomplete="name" required /></label>
+            <label>email<input name="email" type="email" autocomplete="email" required /></label>
+            <label>project overview<textarea name="project_overview" rows="5" required></textarea></label>
+            <label>what do you need<select name="project_need" required>
+              <option value="">select one</option>
+              <option>build a product</option>
+              <option>design and handoff</option>
+              <option>backend or automation</option>
+              <option>launch review</option>
+            </select></label>
+            <button class="primary" type="submit">send project overview</button>
+          </form>
           <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">open x</a>
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <img src="./assets/brand/yescode-main.svg" alt="yescode" />
+      <div>
+        <p>cofounders</p>
+        <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a>
+        <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
+      </div>
+    </footer>
 
     <div class="scroll-tools">
       <button type="button" data-scroll="top" aria-label="scroll to top">top</button>
