@@ -398,7 +398,7 @@ body.is-loading .load-veil {
   }
   .hero-media { transform: none; aspect-ratio: 1.25; }
   .piece-number { order: -2; }
-  .piece-mark { min-height: auto; justify-content: start; }
+  .piece-mark { min-height: auto; justify-content: center; }
   .piece-mark img { max-width: 11rem; }
   .process-list { grid-template-columns: 1fr; }
   .open-link { width: max-content; }
@@ -665,4 +665,16 @@ body.is-loading .load-veil::before {
   .hero-media {
     aspect-ratio: 16 / 10;
   }
+}
+
+.piece-mark,
+.piece-mark img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.piece-mark {
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
 }
