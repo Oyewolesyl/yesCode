@@ -12,6 +12,15 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img,
+video {
+  max-width: 100%;
+}
 body {
   margin: 0;
   color: var(--ink);
@@ -252,8 +261,8 @@ body.is-loading .load-veil {
   min-height: 7rem;
   width: 100%;
   padding: 1rem;
-  border: 1px solid var(--line);
-  background: #f6f2ea;
+  border: 1px solid transparent;
+  background: transparent;
 }
 .piece-mark img {
   max-width: 100%;
@@ -665,6 +674,54 @@ body.is-loading .load-veil::before {
   .hero-media {
     aspect-ratio: 16 / 10;
   }
+
+  .piece-media {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .piece-copy,
+  .piece-media,
+  .piece-mark {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header,
+  .hero,
+  .work-section,
+  .backend-section,
+  .stack-section,
+  .process-section,
+  .contact-section {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .hero h1,
+  .section-head h2,
+  .backend-section h2,
+  .stack-section h2,
+  .contact-section h2,
+  .piece-copy h3 {
+    max-width: 100%;
+    font-size: clamp(2.1rem, 10vw, 3.3rem);
+    line-height: 0.96;
+  }
+
+  .actions,
+  .primary,
+  .secondary,
+  .open-link {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .piece-mark img {
+    max-width: min(12rem, 76vw);
+  }
 }
 
 .piece-mark,
@@ -677,4 +734,9 @@ body.is-loading .load-veil::before {
   justify-content: center !important;
   align-items: center !important;
   text-align: center;
+}
+
+.product-piece.naturepacks .piece-mark {
+  border-color: rgba(246, 242, 234, 0.22);
+  background: #f6f2ea;
 }

@@ -114,7 +114,7 @@ function img(src, alt) {
 }
 
 document.querySelector("#projectGrid").innerHTML = projects.map((project, index) => `
-  <article class="product-piece">
+  <article class="product-piece ${project.title.toLowerCase().includes("naturepacks") ? "naturepacks" : ""}">
     <div class="piece-number">${String(index + 1).padStart(2, "0")}</div>
     <a class="piece-media" href="${project.live}" target="_blank" rel="noreferrer">
       ${img(project.media, project.title)}
