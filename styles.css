@@ -248,7 +248,12 @@ body.is-loading .load-veil {
 .piece-mark {
   display: grid;
   place-items: center;
+  justify-self: center;
   min-height: 7rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: #f6f2ea;
 }
 .piece-mark img {
   max-width: 100%;
