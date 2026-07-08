@@ -9,7 +9,6 @@ const tools = [
   ["github", "https://cdn.simpleicons.org/github/ffffff"],
   ["notion", "https://cdn.simpleicons.org/notion/ffffff"],
   ["figma", "https://cdn.simpleicons.org/figma/F24E1E"],
-  ["openai", "https://cdn.simpleicons.org/openai/ffffff"],
 ];
 
 const systems = [
@@ -30,7 +29,7 @@ const systems = [
   },
   {
     name: "automation",
-    body: "ai tools, mcp workflows, figma, notion, openai, google ai, tencent hunyuan, and build automation are used where they speed up research, structure, testing, and delivery.",
+    body: "automation, mcp workflows, figma, notion, google ai, tencent hunyuan, and build systems are used where they speed up research, structure, testing, and delivery.",
     value: "the point is not to look automated. the point is to reduce delay while keeping the product directed by real judgment.",
   },
   {
@@ -67,8 +66,8 @@ const projects = [
     title: "ypod store",
     meta: "ecommerce web app",
     live: "https://ypod-store.vercel.app/shop",
-    logo: "./assets/projects/ypod/yema-case.png",
-    media: "./assets/projects/ypod/yema-case.png",
+    logo: "./assets/projects/ypod/yema-dark.png",
+    media: "./assets/projects/ypod/remote-customization.mp4",
     surface: "shop and product browsing",
     build: "next.js, product cards, mobile commerce, payment readiness",
     body: "a commerce web app for browsing, comparing, choosing, and buying ypod products with a mobile-first purchase path",
@@ -78,7 +77,7 @@ const projects = [
     title: "ypod backend management",
     meta: "backend operations",
     live: "https://ypod-backend-management.vercel.app/",
-    logo: "./assets/projects/ypod/ypod-reasoning.png",
+    logo: "./assets/projects/ypod/yema-dark.png",
     media: "./assets/projects/ypod/backend-management-room.jpeg",
     surface: "admin facing product control",
     build: "supabase, auth, dashboard logic, payment operations, deployment",
@@ -101,7 +100,7 @@ const projects = [
     meta: "sustainability impact",
     live: "https://www.naturepacks.org",
     logo: "./assets/projects/naturepacks/naturepacks-main.svg",
-    media: "./assets/projects/naturepacks/paper-01.jpeg",
+    media: "./assets/media/naturepacks-shirt-proof.jpg",
     surface: "impact and product proof site",
     build: "html, css, brand proof, deployment",
     body: "a sustainability product story using material clarity, branded proof, process evidence, and environmental positioning",
@@ -113,11 +112,17 @@ function img(src, alt) {
   return `<img src="${src}" alt="${alt}" loading="lazy">`;
 }
 
+function media(src, alt) {
+  return src.endsWith(".mp4")
+    ? `<video src="${src}" aria-label="${alt}" autoplay muted loop playsinline></video>`
+    : img(src, alt);
+}
+
 document.querySelector("#projectGrid").innerHTML = projects.map((project, index) => `
   <article class="product-piece ${project.title.toLowerCase().includes("naturepacks") ? "naturepacks" : ""}">
     <div class="piece-number">${String(index + 1).padStart(2, "0")}</div>
     <a class="piece-media" href="${project.live}" target="_blank" rel="noreferrer">
-      ${img(project.media, project.title)}
+      ${media(project.media, project.title)}
     </a>
     <div class="piece-copy">
       <p class="kicker">${project.meta}</p>
@@ -150,6 +155,21 @@ document.querySelector(".menu-button").addEventListener("click", () => {
   const header = document.querySelector(".site-header");
   const open = header.classList.toggle("open");
   document.querySelector(".menu-button").setAttribute("aria-expanded", String(open));
+});
+
+document.querySelectorAll(".intake-form").forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const body = [
+      `name: ${data.get("name") || ""}`,
+      `email: ${data.get("email") || ""}`,
+      `need: ${data.get("project_need") || ""}`,
+      "",
+      data.get("project_overview") || "",
+    ].join("\n");
+    window.location.href = `mailto:oyewolesyl@gmail.com,daveolaniyan@gmail.com?subject=${encodeURIComponent("new yescode project overview")}&body=${encodeURIComponent(body)}`;
+  });
 });
 
 document.querySelectorAll("a[href^='#']").forEach((link) => {
