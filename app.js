@@ -2,14 +2,14 @@ const tools = [
   ["supabase", "https://cdn.simpleicons.org/supabase/3FCF8E"],
   ["postgresql", "https://cdn.simpleicons.org/postgresql/4169E1"],
   ["react", "https://cdn.simpleicons.org/react/61DAFB"],
-  ["next js", "https://cdn.simpleicons.org/nextdotjs/ffffff"],
+  ["next.js", "https://cdn.simpleicons.org/nextdotjs/ffffff"],
   ["vite", "https://cdn.simpleicons.org/vite/646CFF"],
-  ["type script", "https://cdn.simpleicons.org/typescript/3178C6"],
+  ["typescript", "https://cdn.simpleicons.org/typescript/3178C6"],
   ["vercel", "https://cdn.simpleicons.org/vercel/ffffff"],
   ["github", "https://cdn.simpleicons.org/github/ffffff"],
   ["notion", "https://cdn.simpleicons.org/notion/ffffff"],
   ["figma", "https://cdn.simpleicons.org/figma/F24E1E"],
-  ["open ai", "https://cdn.simpleicons.org/openai/ffffff"],
+  ["openai", "https://cdn.simpleicons.org/openai/ffffff"],
 ];
 
 const systems = [
@@ -30,7 +30,7 @@ const systems = [
   },
   {
     name: "automation",
-    body: "ai tools, mcp workflows, figma, notion, open ai, google ai, tencent hunyuan, and build automation are used where they speed up research, structure, testing, and delivery.",
+    body: "ai tools, mcp workflows, figma, notion, openai, google ai, tencent hunyuan, and build automation are used where they speed up research, structure, testing, and delivery.",
     value: "the point is not to look automated. the point is to reduce delay while keeping the product directed by real judgment.",
   },
   {
@@ -57,10 +57,10 @@ const projects = [
     meta: "consumer electronics brand site",
     live: "https://ypod.vercel.app",
     logo: "./assets/projects/ypod/yema-dark.png",
-    media: "./assets/projects/ypod/ypro-fit.png",
+    media: "./assets/projects/ypod/yema-dark.png",
     surface: "hardware brand surface",
     build: "product interface, media proof, responsive frontend",
-    body: "a hardware brand site that explains the product through fit studies, launch imagery, product hierarchy, and a believable sleep-focused story",
+    body: "a hardware brand site that explains the product through launch imagery, product hierarchy, interface clarity, and a believable sleep-focused story",
     value: "the visual direction gives the product credibility. the build makes that story fast, responsive, and ready for public attention.",
   },
   {
@@ -70,7 +70,7 @@ const projects = [
     logo: "./assets/projects/ypod/yema-case.png",
     media: "./assets/projects/ypod/yema-case.png",
     surface: "shop and product browsing",
-    build: "next js, product cards, mobile commerce, payment readiness",
+    build: "next.js, product cards, mobile commerce, payment readiness",
     body: "a commerce web app for browsing, comparing, choosing, and buying ypod products with a mobile-first purchase path",
     value: "the store turns brand demand into a path toward revenue, including the payment decisions a founder needs before launch.",
   },
@@ -92,7 +92,7 @@ const projects = [
     logo: "./assets/projects/dealradar/main-logo-light.svg",
     media: "./assets/projects/dealradar/banner-dark.png",
     surface: "deal discovery platform",
-    build: "next js, marketplace ux, campaign routing",
+    build: "next.js, marketplace ux, campaign routing",
     body: "a deal discovery and merchant visibility platform shaped around offers, campaign structure, and ecommerce action",
     value: "the experience helps people understand what is being offered quickly, then gives merchants a clearer route to attention and conversion.",
   },
