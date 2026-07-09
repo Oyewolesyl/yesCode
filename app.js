@@ -118,7 +118,12 @@ function media(src, alt) {
     : img(src, alt);
 }
 
-document.querySelector("#projectGrid").innerHTML = projects.map((project, index) => `
+const projectOrder = ["ypod", "naturepacks™", "ypod store", "dealradar ng", "ypod backend management", "a home realty"];
+const orderedProjects = projectOrder
+  .map((title) => projects.find((project) => project.title.toLowerCase() === title.toLowerCase()))
+  .filter(Boolean);
+
+document.querySelector("#projectGrid").innerHTML = orderedProjects.map((project, index) => `
   <article class="product-piece ${project.title.toLowerCase().includes("naturepacks") ? "naturepacks" : ""}">
     <div class="piece-number">${String(index + 1).padStart(2, "0")}</div>
     <a class="piece-media" href="${project.live}" target="_blank" rel="noreferrer">
@@ -158,17 +163,32 @@ document.querySelector(".menu-button").addEventListener("click", () => {
 });
 
 document.querySelectorAll(".intake-form").forEach((form) => {
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    const button = form.querySelector("button[type='submit']");
+    const status = form.querySelector(".form-status");
     const data = new FormData(form);
-    const body = [
-      `name: ${data.get("name") || ""}`,
-      `email: ${data.get("email") || ""}`,
-      `need: ${data.get("project_need") || ""}`,
-      "",
-      data.get("project_overview") || "",
-    ].join("\n");
-    window.location.href = `mailto:oyewolesyl@gmail.com,daveolaniyan@gmail.com?subject=${encodeURIComponent("new yescode project overview")}&body=${encodeURIComponent(body)}`;
+    const endpoint = form.action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
+    button.disabled = true;
+    button.textContent = "sending...";
+    if (status) status.textContent = "";
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      if (!response.ok) throw new Error("send failed");
+      form.reset();
+      if (status) status.textContent = "sent. we will reply from the founder inbox.";
+    } catch (error) {
+      if (status) status.textContent = "opening secure send page...";
+      HTMLFormElement.prototype.submit.call(form);
+      return;
+    } finally {
+      button.disabled = false;
+      button.textContent = "send project overview";
+    }
   });
 });
 
@@ -184,6 +204,7 @@ document.querySelectorAll("img, video").forEach((item) => {
   const done = () => item.closest(".hero-media, .piece-media")?.classList.add("ready");
   item.addEventListener("load", done);
   item.addEventListener("loadeddata", done);
+  item.addEventListener("error", done);
   if (item.complete || item.readyState >= 2) done();
 });
 

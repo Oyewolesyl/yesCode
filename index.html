@@ -8,6 +8,7 @@
       name="description"
       content="yescode builds deployed frontends, backend systems, supabase databases, admin dashboards, stores, payment flows, and product workflows"
     />
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -25,7 +26,7 @@
         <a href="#stack">stack</a>
         <a href="#process">process</a>
         <a href="#contact">contact</a>
-        <a href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">design arm</a>
+        <a class="nav-highlight" href="https://yes-code-design.vercel.app/" target="_blank" rel="noreferrer">design arm</a>
       </nav>
     </header>
 
@@ -88,11 +89,24 @@
           <p class="kicker">contact</p>
           <h2>start with the product you need to launch</h2>
           <p>send a short overview. the goal is to understand the product, the stage, and the service that gets it moving.</p>
-          <p class="founders">cofounders: <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a> and <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a></p>
+          <div class="founders">
+            <article>
+              <strong>DAVE</strong>
+              <span>Founder · Design Engineer</span>
+              <span>Technical Lead, Product & Design</span>
+            </article>
+            <article>
+              <strong>SYLVANNA</strong>
+              <span>Founder</span>
+              <span>Design Engineer</span>
+              <span>Brand, Growth & Partnerships</span>
+            </article>
+          </div>
           <form class="intake-form" action="https://formsubmit.co/oyewolesyl@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="new yescode project overview" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_cc" value="daveolaniyan@gmail.com" />
+            <input type="hidden" name="_template" value="table" />
             <label>name<input name="name" type="text" autocomplete="name" required /></label>
             <label>email<input name="email" type="email" autocomplete="email" required /></label>
             <label>project overview<textarea name="project_overview" rows="5" required></textarea></label>
@@ -104,6 +118,7 @@
               <option>launch review</option>
             </select></label>
             <button class="primary" type="submit">send project overview</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
           <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">open x</a>
         </div>
@@ -113,9 +128,9 @@
     <footer class="site-footer">
       <img src="./assets/brand/yescode-main.svg" alt="yescode" />
       <div>
-        <p>cofounders</p>
-        <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a>
-        <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
+        <p>founders</p>
+        <span>DAVE · Technical Lead, Product & Design</span>
+        <span>SYLVANNA · Brand, Growth & Partnerships</span>
       </div>
     </footer>
 
