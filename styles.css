@@ -507,6 +507,16 @@ body.is-loading .load-veil::before {
   animation: skeleton-pulse 1.1s ease-in-out infinite alternate;
 }
 
+.load-veil,
+.load-veil::before,
+body.is-loading .load-veil,
+body.is-loading .load-veil::before {
+  display: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+
 @keyframes skeleton-pulse {
   from { filter: brightness(0.82); }
   to { filter: brightness(1.14); }
@@ -822,6 +832,28 @@ body.is-loading .load-veil::before {
   animation: none;
 }
 
+body.is-loading .hero-copy > *,
+body.is-loading .section-head > *,
+body.is-loading .backend-section > div:first-child > *,
+body.is-loading .backend-board article,
+body.is-loading .process-list article,
+body.is-loading .contact-section > div > *,
+body.is-loading .tool-mark {
+  color: transparent !important;
+  border-color: rgba(246, 242, 234, 0.08) !important;
+  background:
+    linear-gradient(110deg, rgba(246,242,234,0.08) 0 36%, rgba(246,242,234,0.18) 48%, rgba(246,242,234,0.08) 62%),
+    rgba(246,242,234,0.035) !important;
+  background-size: 220% 100% !important;
+  animation: element-load 1.15s ease-in-out infinite !important;
+}
+
+.product-piece.store .piece-media img,
+.product-piece.store .piece-media video {
+  object-fit: contain !important;
+  padding: 1.15rem;
+}
+
 @keyframes element-load {
   from { background-position: 160% 0, 0 0; }
   to { background-position: -60% 0, 0 0; }
@@ -854,8 +886,8 @@ body.is-loading .load-veil::before {
   .hero {
     min-height: auto !important;
     gap: 1.5rem !important;
-    padding-top: 2.75rem !important;
-    padding-bottom: 2.75rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 
   .hero-copy,
@@ -880,7 +912,7 @@ body.is-loading .load-veil::before {
   .contact-section h2,
   .piece-copy h3 {
     max-width: 100% !important;
-    font-size: clamp(2rem, 10.5vw, 3.15rem) !important;
+    font-size: clamp(2.05rem, 9.8vw, 3rem) !important;
     line-height: 1 !important;
   }
 
@@ -901,7 +933,7 @@ body.is-loading .load-veil::before {
   .hero-media,
   .piece-media {
     min-height: 0 !important;
-    aspect-ratio: 4 / 3 !important;
+    aspect-ratio: 16 / 10 !important;
   }
 
   .product-piece {

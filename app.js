@@ -67,7 +67,7 @@ const projects = [
     meta: "ecommerce web app",
     live: "https://ypod-store.vercel.app/shop",
     logo: "./assets/projects/ypod/yema-dark.png",
-    media: "./assets/projects/ypod/remote-customization.mp4",
+    media: "./assets/projects/ypod/yema-case.png",
     surface: "shop and product browsing",
     build: "next.js, product cards, mobile commerce, payment readiness",
     body: "a commerce web app for browsing, comparing, choosing, and buying ypod products with a mobile-first purchase path",
