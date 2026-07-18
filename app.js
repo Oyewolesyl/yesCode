@@ -108,14 +108,14 @@ const projects = [
   },
 ];
 
-function img(src, alt) {
-  return `<img src="${src}" alt="${alt}" loading="lazy">`;
+function img(src, alt, loading = "lazy") {
+  return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async">`;
 }
 
-function media(src, alt) {
+function media(src, alt, loading = "lazy") {
   return src.endsWith(".mp4")
     ? `<video src="${src}" aria-label="${alt}" autoplay muted loop playsinline></video>`
-    : img(src, alt);
+    : img(src, alt, loading);
 }
 
 const projectOrder = ["ypod", "naturepacks™", "ypod store", "dealradar ng", "ypod backend management", "a home realty"];
@@ -124,10 +124,10 @@ const orderedProjects = projectOrder
   .filter(Boolean);
 
 document.querySelector("#projectGrid").innerHTML = orderedProjects.map((project, index) => `
-  <article class="product-piece ${project.title.toLowerCase().includes("naturepacks") ? "naturepacks" : ""}">
+  <article class="product-piece ${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")} ${project.title.toLowerCase().includes("naturepacks") ? "naturepacks" : ""}">
     <div class="piece-number">${String(index + 1).padStart(2, "0")}</div>
     <a class="piece-media" href="${project.live}" target="_blank" rel="noreferrer">
-      ${media(project.media, project.title)}
+      ${media(project.media, project.title, index < 4 ? "eager" : "lazy")}
     </a>
     <div class="piece-copy">
       <p class="kicker">${project.meta}</p>

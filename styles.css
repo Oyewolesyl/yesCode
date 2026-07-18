@@ -738,6 +738,111 @@ body.is-loading .load-veil::before {
   }
 }
 
+@media (max-width: 760px) {
+  .work-section {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+
+  .section-head {
+    gap: 0.8rem !important;
+    margin-bottom: 1.35rem !important;
+  }
+
+  .product-board {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+
+  .product-piece {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.8rem !important;
+    padding: 0.95rem 0 1.2rem !important;
+    border-top: 1px solid var(--line);
+  }
+
+  .piece-number {
+    order: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .piece-media {
+    order: 1 !important;
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: 14rem !important;
+    aspect-ratio: 16 / 9 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .piece-media img,
+  .piece-media video {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .product-piece.ypod-backend-management .piece-media img,
+  .product-piece.ypod-backend-management .piece-media video,
+  .product-piece.ypod-store .piece-media img,
+  .product-piece.ypod-store .piece-media video {
+    padding: 0.7rem !important;
+  }
+
+  .piece-copy {
+    order: 2 !important;
+    display: grid !important;
+    gap: 0.7rem !important;
+  }
+
+  .piece-copy .kicker,
+  .piece-copy h3,
+  .piece-copy p,
+  .piece-notes {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .piece-copy h3 {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+
+  .piece-mark {
+    order: 3 !important;
+    min-height: 0 !important;
+    padding: 0.75rem !important;
+  }
+
+  .piece-mark img {
+    max-height: 4.25rem !important;
+  }
+
+  .contact-section {
+    gap: 1.2rem !important;
+  }
+
+  .contact-section > img {
+    width: min(100%, 13rem) !important;
+    margin: 0 auto !important;
+  }
+
+  .founders article {
+    border-top: 1px solid var(--line);
+    padding-top: 0.8rem;
+  }
+
+  .direct-mail {
+    margin-bottom: 0.75rem;
+  }
+}
+
 @media (max-width: 640px) {
   .site-header,
   .hero,
@@ -953,5 +1058,67 @@ body.is-loading .tool-mark {
     margin-left: 0 !important;
     margin-right: 0 !important;
     transform: none !important;
+  }
+}
+
+/* production mobile card lock */
+@media (max-width: 760px) {
+  #work .product-board {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+
+  #work .product-piece {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.8rem !important;
+    padding: 0.95rem 0 1.2rem !important;
+  }
+
+  #work .piece-number {
+    order: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+  }
+
+  #work .piece-media {
+    order: 1 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: 14rem !important;
+    aspect-ratio: 16 / 9 !important;
+    margin: 0 !important;
+  }
+
+  #work .piece-media img,
+  #work .piece-media video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  #work .piece-copy {
+    order: 2 !important;
+    display: grid !important;
+    gap: 0.7rem !important;
+  }
+
+  #work .piece-copy .kicker,
+  #work .piece-copy h3,
+  #work .piece-copy p,
+  #work .piece-notes {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #work .piece-mark {
+    order: 3 !important;
+    min-height: 0 !important;
+    padding: 0.75rem !important;
+  }
+
+  #work .piece-mark img {
+    max-height: 4.25rem !important;
   }
 }
